@@ -8,8 +8,8 @@ github: https://github.com/gaogao67
 baseurl: ""
 description: Just do it！
 meta_description: 笑东风博客
-motto: "生死看淡，不服就干。"
-banner: "多做事，少哔哔。"
+motto: "生死看淡，不服就干!"
+banner: "多做事，少哔哔!"
 
 #permalink: /:categories/:year/:month/:day/:title/
 permalink: /:categories/:title/

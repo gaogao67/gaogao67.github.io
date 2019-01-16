@@ -6,10 +6,10 @@ url: https://gaogao67.github.io/
 resume_site: https://gaogao67.github.io/
 github: https://github.com/gaogao67
 baseurl: ""
-description: 身在凡尘，笑在东风！
+description: Just do it！
 meta_description: 笑东风博客
-motto: It's our wits that make us men.
-banner: 学而不思则罔，思而不学则殆。
+motto: "生死看淡，不服就干。"
+banner: "多做事，少哔哔。"
 
 #permalink: /:categories/:year/:month/:day/:title/
 permalink: /:categories/:title/

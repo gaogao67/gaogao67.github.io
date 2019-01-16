@@ -2,8 +2,8 @@
 layout: post
 title:  MySQL备份--xtrabckup介绍
 date:   2019-01-16 15:00:00 +0800
-categories: MySQL Backup
-tag: MySQL Backup
+categories: MySQL-Backup
+tag: MySQL-Backup
 ---
 
 * content

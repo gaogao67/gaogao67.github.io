@@ -29,17 +29,18 @@ STEP2: 以忽略权限方式启动MYSQL服务         {#step2}
 STEP3: 更新管理员密码                      {#step3}
 ====================================
 ```sql
-##MySQL5.6版本更新密码
+## MySQL5.6版本更新密码
 update mysql.user set password=password("abc@123.com") where user="root";
-##MySQL5.7版本更新密码
+## MySQL5.7版本更新密码
 update mysql.user set authentication_string=password("new_pass") where user="root";
-##刷新权限
+## 刷新权限
 flush privileges;
 ```
 
 
-停止MySQL服务，重新正常启动                    {#step4}
+STEP4: 停止MySQL服务，重新正常启动                    {#step4}
 ====================================
 ```bash
+ps -ef | grep -v 'grep' | grep 'mysqld' | awk '{print $2}' | xargs kill -9
 /export/servers/mysql/bin/mysqld_safe --defaults-file=/export/servers/mysql/etc/my.cnf &
 ```

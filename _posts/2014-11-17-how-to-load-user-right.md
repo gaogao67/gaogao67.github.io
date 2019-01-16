@@ -2,8 +2,8 @@
 layout: post
 title:  导出MySQL用户权限
 date:   2019-01-16 15:00:00 +0800
-categories: MySQL User
-tag: MySQL User
+categories: MySQL-User
+tag: MySQL-User
 ---
 
 * content

@@ -31,7 +31,7 @@ innobackup --copy-back [--defaults-file=MY.CNF] BACKUP-DIR
 
 常用参数                  {#ch2}
 ====================================
-```
+```bash
 
 --slave_info
 在从库上备份时，使用--slave_info参数来保存主库的binlog信息到xtrabackup_slave_info文件中。

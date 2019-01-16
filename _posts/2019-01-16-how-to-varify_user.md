@@ -66,3 +66,36 @@ REVOKE SELECT ON testdb1.tb001 FROM gga@localhost;
 ```
 
 ![/styles/pic/mysql_user/JdOnline20180802161607.png]({{ '/styles/pic/mysql_user/JdOnline20180802161607.png' | prepend: site.baseurl  }})
+
+
+MySQL特殊权限
+====================================
+```
+USAGE 权限只用用于数据库登录，不能执行任何操作,usage 权限不能被回收。
+ALL: 允许做任何事(和root一样)。
+
+```
+
+MySQL数据库/数据表/数据列权限
+====================================
+```
+Alter: 修改已存在的数据表(例如增加/删除列)和索引。
+Create: 建立新的数据库或数据表。
+Delete: 删除表的记录。
+Drop: 删除数据表或数据库。
+INDEX: 建立或删除索引。
+Insert: 增加表的记录。
+Select: 显示/搜索表的记录。
+Update: 修改表中已存在的记录。
+
+```
+
+MySQL全局管理权限
+====================================
+```
+FILE: 在MySQL服务器上读写文件。
+PROCESS: 显示或杀死属于其它用户的服务线程。
+RELOAD: 重载访问控制表，刷新日志等。
+SHUTDOWN: 关闭MySQL服务。
+
+```

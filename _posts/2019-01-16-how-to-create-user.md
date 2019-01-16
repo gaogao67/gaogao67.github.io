@@ -26,9 +26,14 @@ IDENTIFIED BY [PASSWORD] 'password'
 ```
 
 注意[PASSWORD]是可选参数，IDENTIFIED BY PASSWORD 后跟的是加密后的密码，IDENTIFIED BY 后跟的是未加密的密码
+```
 GRANT USAGE ON *.* TO 'cx'@'%' IDENTIFIED BY PASSWORD '*67CF1635475C64DE1C9608FEEE1AD307C4C2BC2F';
+```
+和
+```
 GRANT USAGE ON *.* TO 'cx'@'%' IDENTIFIED BY 'abc@123.com';
-下面两条SQL效果一样，但推荐使用第一种方式，第二种方式的明文密码会被记录到binlog中，存在安全风险。
+```
+上面两条SQL效果一样，但推荐使用第一种方式，第二种方式的明文密码会被记录到binlog中，存在安全风险。
 
 
 WITH GRANT OPTION 允许用户将自身拥有的权限授予他人。

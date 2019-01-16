@@ -12,19 +12,22 @@ tag: MySQL-User
 
 忘记MYSQL管理员密码如root用户密码，可以按照以下方式来修改
 
-## STEP1: 停止MySQL服务                 {#step1}
+STEP1: 停止MySQL服务                 {#step1}
+====================================
 ```bash
 ps -ef | grep -v 'grep' | grep 'mysqld' | awk '{print $2}' | xargs kill -9
 ```
 
 
-## STEP2: 以忽略权限方式启动MYSQL服务         {#step2}
+STEP2: 以忽略权限方式启动MYSQL服务         {#step2}
+====================================
 ```bash
 /export/servers/mysql/bin/mysqld --skip-grant-tables --explicit_defaults_for_timestamp --user=mysql &
 ```
 
 
-## STEP3: 更新管理员密码                      {#step3}
+STEP3: 更新管理员密码                      {#step3}
+====================================
 ```sql
 ##MySQL5.6版本更新密码
 update mysql.user set password=password("abc@123.com") where user="root";
@@ -35,7 +38,8 @@ flush privileges;
 ```
 
 
-## 停止MySQL服务，重新正常启动                    {#step4}
+停止MySQL服务，重新正常启动                    {#step4}
+====================================
 ```bash
 /export/servers/mysql/bin/mysqld_safe --defaults-file=/export/servers/mysql/etc/my.cnf &
 ```

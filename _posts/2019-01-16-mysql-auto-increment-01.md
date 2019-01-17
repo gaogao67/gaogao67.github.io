@@ -2,8 +2,8 @@
 layout: post
 title:  使用ALTER TABLE新增自增列导致主从差异
 date:   2019-01-16 15:00:00 +0800
-categories: MySQL Auto Increment
-tag: AUTO_INCREMENT
+categories: "MySQL Auto Increment"
+tag: "AUTO_INCREMENT"
 ---
 
 * content

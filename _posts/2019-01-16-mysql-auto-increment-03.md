@@ -2,7 +2,7 @@
 layout: post
 title:  使用REPLACE INTO导致主从差异
 date:   2019-01-16 15:00:00 +0800
-categories: MySQL Auto Increment
+categories: "MySQL Auto Increment"
 tag: AUTO_INCREMENT
 ---
 
@@ -12,9 +12,7 @@ tag: AUTO_INCREMENT
 
 问题说明
 ====================================
-在MySQL中，如果表当前没有定义主键，可以直接使用ALTER TABLE TB001 ADD ID INT AUTO_INCREMENT PRIMARY KEY来为TB001新增一个自增主键列， 但在复制场景下，主库执行的DDL操作会按照DDL语句复制到从库执行，只能保证主从节点之间的表结构一致，但无法保证相同记录在主库和从库上获得相同的自增ID，因此会存在数据不一致问题。
-
-对于Innodb表，如果在表创建时没有指定主键，MySQL会隐式为Innodb表添加一个自增列，该内部自增列在复制时不会被复制到从库，因此导致相同数据在主从节点上拥有不同的自增ID值。在将非主键表改为自增主键表过程中，会按照原表数据存放位置顺序地拷贝到临时表中并生成自增ID值，最终导致主从数据不一致。
+在主库上使用REPLACE INTO更新数据时，表存在唯一索引且REPALCE INTO更新自增列值，在ROW模式下，主从数据能保持一致，但从库自增列初始值不会发生变化，当主从切换后，会存在问题。
 
 
 测试场景
@@ -22,19 +20,19 @@ tag: AUTO_INCREMENT
 在主库上执行下面SQL:
 ```
 
-会话1
-START TRANSACTION;
-INSERT INTO TB001(C1) VALUES(1);
+CREATE TABLE T_AUTO_TEST
+(
+    ID INT AUTO_INCREMENT PRIMARY KEY,
+    C1 INT NOT NULL,
+    UNIQUE KEY UNI_C1(C1)
+);
 
-会话2：
-START TRANSACTION;
-INSERT INTO TB001(C1) VALUES(2);
-COMMIT;
-
-会话1：
-COMMIT;
+INSERT INTO T_AUTO_TEST(ID,C1)VALUES(99,99);
+REPLACE INTO T_AUTO_TEST(ID,C1)VALUES(101,99);
 
 ```
+
+
 
 在主库上，由于会话1的INSERT比会话2的INSERT要早，因此会话1插入数据获得的内部自增ID要比会话2插入数据获得的ID要小。
 

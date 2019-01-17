@@ -38,7 +38,9 @@ tag: Alter Table
 操作步骤
 ====================================
 假如删除mytest.erp表，其数据文件存储路径为 /data/mysql/mytest/erp.ibd
+
 操作办法：
+
 1、创建硬连接指向要删除表的ibd文件
 ```
 
@@ -69,5 +71,6 @@ rm -rf /data/mysql/mytest/erp.ibd.hdlk;
 
 
 PS1:在Window上删除表时，Window只需要删除该文件指针并将该存储区域表示为可重用即可，因此在Windows上删除超大表无需过多操作。
+
 参考链接：
 https://www.cnblogs.com/digdeep/p/9588709.html

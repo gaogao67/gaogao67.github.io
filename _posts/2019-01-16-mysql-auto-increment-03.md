@@ -2,7 +2,7 @@
 layout: post
 title:  使用REPLACE INTO导致主从差异
 date:   2019-01-16 15:00:00 +0800
-categories: "MySQL Auto Increment"
+categories: MySQL-Auto-Increment
 tag: AUTO_INCREMENT
 ---
 

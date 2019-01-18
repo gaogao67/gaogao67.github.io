@@ -11,7 +11,9 @@ tag: Derived-Table
 
 
 =======================================
+
 测试环境：MySQL 5.7.19
+
 =======================================
 
 
@@ -49,7 +51,7 @@ HAVING COUNT(1)>1
 对于执行计划为：
 ![02.png]({{ '/styles/pic/derived-table/02.png'|prepend:site.baseurl}})
 
-<img max-width="600" height="150" src="https://gaogao67.github.io//styles/pic/derived-table/02.png"/>
+<img src="https://gaogao67.github.io//styles/pic/derived-table/02.png"/>
 
 优化前需要扫描`instance_count`表上`ForeignKey_cluster_id`索引全部数据然后进行分组计算，再按照`HAVING`条件进行过滤，得到派生表数据，再根据派生表外部条件`cluster_id=1487`进行过滤得到最终结果。
 

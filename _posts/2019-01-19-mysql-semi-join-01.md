@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  MySQL备份--xtrabckup介绍
+title:  MySQL--SemiJoin优化策略
 date:   2019-01-16 15:00:00 +0800
 categories: MySQL-SemiJoin
 tag: MySQL-SemiJoin
@@ -74,14 +74,14 @@ MaterializeScan: 将inner-table去重固化成临时表，遍历固化表，然�
 
 
 在MySQL中优化器开关optimizer_switch中，以下参数影响Semi-join的选择：
+```
 
 semijoin={on|off}
-
 materialization={on|off}
-
 loosescan={on|off}
-
 subquery_materialization_cost_based={on|off}
+
+```
 
 
 

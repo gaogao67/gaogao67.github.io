@@ -10,7 +10,8 @@ tag: MySQL-User
 {:toc}
 
 
-
+创建语法					{#ch1}
+========================
 ## CREATE USER语法
 ```bash
 CREATE USER 'username'@'hostname' IDENTIFIED BY 'password'; 
@@ -53,3 +54,9 @@ WITH GRANT OPTION;
 ```bash
 ALTER USER 'gga'@'localhost' PASSWORD EXPIRE INTERVAL 60 DAY;
 ```
+
+
+创建语法					{#ch2}
+========================
+在MySQL中，有5种控制数据访问的权限，12种控制数据结构的权限，11种管理数据库系统的权限
+![/styles/pic/mysql_user/001.png]({{ '/styles/pic/mysql_user/001.png'|prepend:site.baseurl}})

@@ -3,7 +3,7 @@ layout: post
 title:  MySQL删除超大表操作
 date:   2019-01-16 15:00:00 +0800
 categories: MySQL-Alter-Table
-tag: Alter Table
+tag: AlterTable
 ---
 
 * content

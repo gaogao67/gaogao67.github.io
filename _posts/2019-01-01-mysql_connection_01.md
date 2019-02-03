@@ -3,7 +3,7 @@ layout: post
 title:  MySQL数据库连接信息
 date:   2019-01-16 15:00:00 +0800
 categories: MySQL-Connection
-tag: Connection
+tag: MySQL-Connection
 ---
 
 * content
